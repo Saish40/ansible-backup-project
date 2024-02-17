@@ -1,0 +1,28 @@
+# Install MYSQL server 
+sudo yum update -y 
+
+# Install mysql server 
+
+sudo yum install -y mariadb-server 
+
+# Start the mysql server 
+sudo systemctl start mariadb 
+
+# Enable mysql to start when system reboots 
+sudo systemctl enable mariadb 
+
+# Secure the installation by running command
+sudo mysql_secure_installation
+
+# Database and table creation
+mysql -u root -p
+show databases;
+create database ansible;
+use ansible;
+create table details(first_name varchar(500) NOT null, last_name varchar(500) NOT null);
+INSERT INTO tblEmployee1 (first_name, last_name) values ("Saish","Patil");
+
+# Install and configure AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install

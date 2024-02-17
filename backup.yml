@@ -1,0 +1,8 @@
+---
+ - name: Playbook to take backup of MYSQL DB
+   hosts: localhost
+   tasks:
+     - name: Take MYSQL backup
+       shell: mysqldump -u root --password="enter_your_password"  ansible  details > /tmp/dump.sql
+     - name: Push MYSQL backup to s3 bucket
+       shell: /usr/local/bin/aws s3 cp  /tmp/dump.sql s3://"enter_your_bucketname"
