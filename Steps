@@ -20,7 +20,7 @@ show databases;
 create database ansible;
 use ansible;
 create table details(first_name varchar(500) NOT null, last_name varchar(500) NOT null);
-INSERT INTO tblEmployee1 (first_name, last_name) values ("Saish","Patil");
+INSERT INTO details (first_name, last_name) values ("Saish", "Patil");
 
 # Install and configure AWS CLI
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
